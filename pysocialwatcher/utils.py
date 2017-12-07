@@ -137,7 +137,16 @@ def trigger_request_process_and_return_response(rows_to_request):
 
     # Trigger Process in rows
     for index, row in rows_to_request.iterrows():
+        print('starting')
         token, account = get_token_and_account_number_or_wait()
+        print('index')
+        print(index)
+        print('row')
+        print(row)
+        print('token')
+        print(token)
+        print('account')
+        print(account)
         p = Process(target=trigger_facebook_call, args=(index, row, token, account, shared_queue))
         list_process.append(p)
 
