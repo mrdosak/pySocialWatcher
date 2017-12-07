@@ -130,14 +130,16 @@ def add_published_platforms(dataframe, input_json):
 
 
 def trigger_request_process_and_return_response(rows_to_request):
+    print('starting')
     process_manager = Manager()
+    print('starting2')
     shared_queue = process_manager.Queue()
     shared_queue_list = []
     list_process = []
 
     # Trigger Process in rows
     for index, row in rows_to_request.iterrows():
-        print('starting')
+        print('starting3')
         token, account = get_token_and_account_number_or_wait()
         print('index')
         print(index)
